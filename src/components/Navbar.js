@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
-import { GraduationCap, Menu, X, Calendar, Users, Award, BookOpen, ChevronDown } from "lucide-react";
+import { GraduationCap, Menu, X, Calendar, Users, Award, BookOpen, ChevronDown, Home as HomeIcon } from "lucide-react";
 import React from "react";
 
 const Navbar = React.memo(function Navbar() {
@@ -28,7 +28,7 @@ const Navbar = React.memo(function Navbar() {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '/', icon: null },
+    { name: 'Home', href: '/', icon: HomeIcon },
     { 
       name: 'Seminars', 
       href: '/seminars', 
@@ -45,7 +45,7 @@ const Navbar = React.memo(function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200/50 transition-transform duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}
+        className={`fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-200/50 dark:border-gray-800/50 transition-transform duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}
       >
         <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
           <div className="flex justify-between items-center h-16 lg:h-20">
@@ -55,10 +55,10 @@ const Navbar = React.memo(function Navbar() {
                 <GraduationCap className="w-6 h-6 text-white" />
               </div>
               <div className="hidden sm:block">
-                <span className="text-xl font-bold text-gray-900">
+                <span className="text-xl font-bold text-gray-900 dark:text-white">
                   EduSeminarsPK
                 </span>
-                <div className="text-xs text-gray-600">
+                <div className="text-xs text-gray-600 dark:text-gray-300">
                   Empowering Students
                 </div>
               </div>
@@ -75,7 +75,7 @@ const Navbar = React.memo(function Navbar() {
                 >
                   <Link 
                     href={item.href}
-                    className="flex items-center px-4 py-2 rounded-xl font-medium text-gray-700 hover:text-blue-600 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300"
+                    className="flex items-center px-4 py-2 rounded-xl font-medium text-gray-700 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 dark:hover:bg-gray-800 transition-all duration-300"
                   >
                     {item.icon && <item.icon className="w-4 h-4 mr-2" />}
                     {item.name}
@@ -88,12 +88,12 @@ const Navbar = React.memo(function Navbar() {
 
                   {/* Dropdown Menu */}
                   {item.dropdown && activeDropdown === item.name && (
-                    <div className="absolute top-full left-0 mt-2 w-64 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-200/50 py-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                    <div className="absolute top-full left-0 mt-2 w-64 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-200/50 dark:border-gray-800/50 py-2 animate-in fade-in slide-in-from-top-2 duration-200">
                       {item.dropdown.map((dropdownItem) => (
                         <Link
                           key={dropdownItem.name}
                           href={dropdownItem.href}
-                          className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-200 mx-2 rounded-xl"
+                          className="block px-4 py-3 text-gray-700 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 dark:hover:bg-gray-800 transition-all duration-200 mx-2 rounded-xl"
                         >
                           {dropdownItem.name}
                         </Link>
@@ -114,7 +114,7 @@ const Navbar = React.memo(function Navbar() {
               </Link>
               <Link 
                 href="/contact"
-                className="px-6 py-2.5 rounded-full font-semibold border-2 border-gray-300 text-gray-700 hover:border-blue-600 hover:text-blue-600 hover:scale-105 transform transition-all duration-300"
+                className="px-6 py-2.5 rounded-full font-semibold border-2 border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-100 hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-105 transform transition-all duration-300"
               >
                 Contact
               </Link>
@@ -123,7 +123,7 @@ const Navbar = React.memo(function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 rounded-xl text-gray-700 hover:bg-gray-100 transition-colors duration-300"
+              className="lg:hidden p-2 rounded-xl text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -132,13 +132,13 @@ const Navbar = React.memo(function Navbar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-200/50 shadow-2xl animate-in slide-in-from-top duration-300">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-b border-gray-200/50 dark:border-gray-800/50 shadow-2xl animate-in slide-in-from-top duration-300">
             <div className="px-4 py-6 space-y-2">
               {navItems.map((item) => (
                 <div key={item.name}>
                   <Link
                     href={item.href}
-                    className="flex items-center px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 rounded-xl transition-all duration-200"
+                    className="flex items-center px-4 py-3 text-gray-700 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 dark:hover:bg-gray-800 rounded-xl transition-all duration-200"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.icon && <item.icon className="w-5 h-5 mr-3" />}
@@ -152,7 +152,7 @@ const Navbar = React.memo(function Navbar() {
                         <Link
                           key={dropdownItem.name}
                           href={dropdownItem.href}
-                          className="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200"
+                          className="block px-4 py-2 text-sm text-gray-600 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 rounded-lg transition-colors duration-200"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {dropdownItem.name}
@@ -164,7 +164,7 @@ const Navbar = React.memo(function Navbar() {
               ))}
               
               {/* Mobile CTA Buttons */}
-              <div className="pt-4 space-y-3 border-t border-gray-200">
+              <div className="pt-4 space-y-3 border-t border-gray-200 dark:border-gray-700">
                 <Link
                   href="/register"
                   className="block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
@@ -174,7 +174,7 @@ const Navbar = React.memo(function Navbar() {
                 </Link>
                 <Link
                   href="/contact"
-                  className="block w-full text-center px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-blue-600 hover:text-blue-600 transition-all duration-300"
+                  className="block w-full text-center px-6 py-3 border-2 border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-100 font-semibold rounded-xl hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Contact Us

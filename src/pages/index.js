@@ -12,7 +12,7 @@ const seminars = [
     date: "2025-07-25T14:00:00", // 2:00 PM
     speaker: "Dr. Sarah Chen",
     company: "Google DeepMind",
-    location: "Virtual & Campus Hub", // keep for data, but will not display
+    location: "Quetta, Pakistan",
     category: "Technology",
     type: "Career Development",
     department: "Software Engineering",
@@ -29,7 +29,7 @@ const seminars = [
     date: "2025-07-25T14:00:00", // 2:00 PM
     speaker: "Prof. Maria Rodriguez",
     company: "EU Education Council",
-    location: "Main Auditorium",
+    location: "Quetta, Pakistan",
     category: "Study Abroad",
     type: "International Opportunities",
     department: "All Departments",
@@ -46,7 +46,7 @@ const seminars = [
     date: "2025-07-25T14:00:00", // 2:00 PM
     speaker: "Dr. James Wilson",
     company: "Johns Hopkins Medical Center",
-    location: "Medical Campus",
+    location: "Quetta, Pakistan",
     category: "Research",
     type: "Academic Symposium",
     department: "Medical Sciences",
@@ -63,7 +63,7 @@ const seminars = [
     date: "2025-07-25T14:00:00", // 2:00 PM
     speaker: "Dr. Emily Green",
     company: "FAO United Nations",
-    location: "Agriculture Building",
+    location: "Quetta, Pakistan",
     category: "Environment",
     type: "Industry Panel",
     department: "Agricultural Sciences",
@@ -444,7 +444,7 @@ export default function ModernSeminarsWebsite() {
           
           <div className="mt-12 flex items-center justify-center text-sm text-gray-300">
             <Clock className="w-4 h-4 mr-2" />
-            Next registration deadline: July 30, 2025
+            Next registration deadline: July 24, 2025
           </div>
         </div>
       </section>
