@@ -127,7 +127,7 @@ export default function About() {
               <h2 className="text-4xl font-bold text-gray-900">Our Vision</h2>
             </div>
             <p className="text-xl text-gray-700 leading-relaxed mb-6">
-              A world where geographical boundaries don't limit educational aspirations, where every motivated student can access mentorship, scholarships, and international opportunities.
+              A world where geographical boundaries don&apos;t limit educational aspirations, where every motivated student can access mentorship, scholarships, and international opportunities.
             </p>
             <div className="bg-purple-50 rounded-2xl p-6 border-l-4 border-purple-500">
               <p className="text-purple-800 font-medium">
@@ -228,18 +228,18 @@ export default function About() {
             Join thousands of students who have already accelerated their academic and professional journey.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+            <Link
               href="/seminars"
               className="bg-white text-blue-700 px-8 py-4 rounded-full font-bold hover:bg-gray-100 shadow-lg transition-all duration-300 hover:scale-105"
             >
               Browse Upcoming Seminars
-            </a>
-            <a
+            </Link>
+            <Link
               href="/contact"
               className="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-blue-700 transition-all duration-300"
             >
               Get in Touch
-            </a>
+            </Link>
           </div>
         </div>
       </section>
