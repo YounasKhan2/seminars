@@ -42,7 +42,6 @@ html, body {
     background: #181824;
     color: #f3f3f3;
     border: 1px solid #444;
-    /* Improved placeholder visibility */
   }
   input::placeholder,
   textarea::placeholder {
@@ -112,6 +111,97 @@ html, body {
   .shadow-xl,
   .shadow-2xl {
     box-shadow: 0 2px 16px 0 rgba(0,0,0,0.7) !important;
+  }
+
+  /* Fix for text invisibility in badge, buttons, and cards */
+  .bg-blue-600,
+  .bg-purple-600,
+  .bg-indigo-900,
+  .bg-pink-800,
+  .bg-blue-700,
+  .bg-green-500,
+  .bg-yellow-500,
+  .bg-purple-500,
+  .bg-red-500,
+  .bg-indigo-500,
+  .bg-amber-50,
+  .bg-green-50,
+  .bg-emerald-50 {
+    background-color: #232336 !important;
+    color: #f3f3f3 !important;
+  }
+  .text-white {
+    color: #f3f3f3 !important;
+  }
+  .text-blue-600,
+  .text-blue-700,
+  .text-indigo-500,
+  .text-purple-700,
+  .text-yellow-500,
+  .text-green-700,
+  .text-red-800,
+  .text-green-800,
+  .text-amber-800,
+  .text-purple-800 {
+    color: #7abaff !important;
+  }
+  .text-yellow-400,
+  .text-yellow-500 {
+    color: #ffe066 !important;
+  }
+  .text-gray-500 {
+    color: #b0b0b0 !important;
+  }
+  .bg-white\/10,
+  .bg-white\/20,
+  .bg-white\/30,
+  .bg-white\/90 {
+    background-color: rgba(24, 24, 36, 0.9) !important;
+    color: #f3f3f3 !important;
+  }
+  .bg-white\/80 {
+    background-color: rgba(24, 24, 36, 0.8) !important;
+    color: #f3f3f3 !important;
+  }
+  .bg-white\/20 {
+    background-color: rgba(24, 24, 36, 0.2) !important;
+    color: #f3f3f3 !important;
+  }
+  .bg-white\/50 {
+    background-color: rgba(24, 24, 36, 0.5) !important;
+    color: #f3f3f3 !important;
+  }
+  .bg-white\/70 {
+    background-color: rgba(24, 24, 36, 0.7) !important;
+    color: #f3f3f3 !important;
+  }
+  .bg-white\/100 {
+    background-color: #181824 !important;
+    color: #f3f3f3 !important;
+  }
+  .border-white\/20 {
+    border-color: #333 !important;
+  }
+  .border-white\/90 {
+    border-color: #333 !important;
+  }
+  .border-white {
+    border-color: #333 !important;
+  }
+  .text-gray-200 {
+    color: #b0b0b0 !important;
+  }
+  .text-gray-300 {
+    color: #b0b0b0 !important;
+  }
+  .text-gray-400 {
+    color: #b0b0b0 !important;
+  }
+  .text-black {
+    color: #f3f3f3 !important;
+  }
+  .bg-black\/70 {
+    background-color: rgba(0,0,0,0.85) !important;
   }
 }
 
