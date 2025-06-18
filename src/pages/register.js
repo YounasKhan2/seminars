@@ -1,45 +1,47 @@
-import { useState } from "react";
+import React from "react";
 
-export default function Register() {
-  const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    program: "",
-    year: "",
-    seminar: ""
-  });
-
-  function handleChange(e) {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    setSubmitted(true);
-    // For MVP, just show confirmation. Integrate with Formspree/Sheets for production.
-  }
-
-  if (submitted) {
-    return (
-      <div className="py-12 text-center">
-        <h1 className="text-2xl font-bold mb-4 text-blue-900">Thank you for registering!</h1>
-        <p className="text-gray-700">We have received your registration. See you at the seminar!</p>
-      </div>
-    );
-  }
-
+const Register = () => {
   return (
-    <section className="py-12 max-w-lg mx-auto">
-      <h1 className="text-3xl font-bold mb-6 text-blue-900">Seminar Registration</h1>
-      <form onSubmit={handleSubmit} className="bg-white shadow-lg rounded-lg p-8 space-y-4">
-        <input name="name" required placeholder="Full Name" className="w-full border px-3 py-2 rounded" onChange={handleChange} />
-        <input name="email" required placeholder="University Email" className="w-full border px-3 py-2 rounded" onChange={handleChange} />
-        <input name="program" required placeholder="Program (e.g., BSc Computer Science)" className="w-full border px-3 py-2 rounded" onChange={handleChange} />
-        <input name="year" required placeholder="Year (e.g., 2nd Year)" className="w-full border px-3 py-2 rounded" onChange={handleChange} />
-        <input name="seminar" required placeholder="Seminar of Interest" className="w-full border px-3 py-2 rounded" onChange={handleChange} />
-        <button type="submit" className="bg-blue-900 text-white px-6 py-2 rounded hover:bg-blue-700 transition w-full">Register</button>
-      </form>
+    <section className="py-12 max-w-2xl mx-auto">
+      <h1 className="text-3xl font-bold mb-6 text-blue-900 text-center">
+        Seminar Registration & Payment Proof
+      </h1>
+      <div className="bg-white shadow-lg rounded-lg p-8">
+        <p className="mb-6 text-gray-700 text-center">
+          Please pay <span className="font-bold">800 PKR</span> via Easypaisa, JazzCash, or Bank Transfer to the account details below. Then fill out the Google Form and upload your payment screenshot to complete your registration.
+        </p>
+
+        <div className="mb-8 bg-blue-50 border-l-4 border-blue-600 p-4 rounded">
+          <div className="mb-2 font-semibold">Payment Details:</div>
+          <div>
+            <span className="font-bold">Easypaisa:</span>{" "}
+            03324173124 (Asmat Shah)
+          </div>
+          <div>
+            <span className="font-bold">Bank Account:</span>{" "}
+            1346315149942 (UBL Bank) Account Name: Muhammad Younas
+          </div>
+        </div>
+
+        {/* New UI for Google Form Link */}
+        <div className="mb-8 text-center">
+          <h2 className="text-xl font-semibold mb-2">Prefer to open the form in a new tab?</h2>
+          <a
+            href="https://forms.gle/pkxEu7GEWNTLzTeS9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-6 py-3 bg-blue-600 text-white font-bold rounded hover:bg-blue-700 transition"
+          >
+            Open Google Form
+          </a>
+          <div className="mt-4 text-blue-800 text-sm">
+            <strong>Note:</strong> Please fill out the Google Form. We will send you the venue details and invitation on your email after verification.
+          </div>
+        </div>
+
+      </div>
     </section>
   );
-}
+};
+
+export default React.memo(Register);

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { Calendar, MapPin, Users, Award, Globe, BookOpen, Utensils, GraduationCap, ChevronRight, Star, Play, ArrowRight, Clock, CheckCircle } from 'lucide-react';
 import Footer from '../components/Footer';
 import Image from 'next/image';
@@ -8,10 +9,10 @@ const seminars = [
   {
     id: 1,
     title: "AI & Machine Learning Career Pathways",
-    date: "2025-07-15T18:00:00",
+    date: "2025-07-25T14:00:00", // 2:00 PM
     speaker: "Dr. Sarah Chen",
     company: "Google DeepMind",
-    location: "Virtual & Campus Hub",
+    location: "Virtual & Campus Hub", // keep for data, but will not display
     category: "Technology",
     type: "Career Development",
     department: "Software Engineering",
@@ -19,13 +20,13 @@ const seminars = [
     tags: ["AI", "Career", "Tech"],
     attendees: 156,
     rating: 4.9,
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop",
+    image: "/assets/AI.jpeg",
     featured: true
   },
   {
     id: 2,
-    title: "Study Abroad: European Universities",
-    date: "2025-07-20T19:00:00",
+    title: "Study Abroad: European Universities Counseling",
+    date: "2025-07-25T14:00:00", // 2:00 PM
     speaker: "Prof. Maria Rodriguez",
     company: "EU Education Council",
     location: "Main Auditorium",
@@ -36,13 +37,13 @@ const seminars = [
     tags: ["Europe", "Scholarships", "Study Abroad"],
     attendees: 89,
     rating: 4.8,
-    image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Corrected image
+    image: "/assets/study.jpg",
     featured: true
   },
   {
     id: 3,
     title: "Medical Research Breakthrough Symposium",
-    date: "2025-07-22T14:00:00",
+    date: "2025-07-25T14:00:00", // 2:00 PM
     speaker: "Dr. James Wilson",
     company: "Johns Hopkins Medical Center",
     location: "Medical Campus",
@@ -53,13 +54,13 @@ const seminars = [
     tags: ["Medicine", "Research", "Healthcare"],
     attendees: 92,
     rating: 4.9,
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=250&fit=crop",
+    image: "/assets/medical.jpeg",
     featured: true
   },
   {
     id: 4,
     title: "Sustainable Agriculture & Food Security",
-    date: "2025-07-28T16:00:00",
+    date: "2025-07-25T14:00:00", // 2:00 PM
     speaker: "Dr. Emily Green",
     company: "FAO United Nations",
     location: "Agriculture Building",
@@ -70,7 +71,7 @@ const seminars = [
     tags: ["Agriculture", "Sustainability", "Environment"],
     attendees: 67,
     rating: 4.8,
-    image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=400&h=250&fit=crop",
+    image: "/assets/agric.jpeg",
     featured: true
   }
 ];
@@ -104,25 +105,25 @@ const departments = [
 
 const testimonials = [
   {
-    name: "Alex Thompson",
-    role: "Master&apos;s Student, MIT",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+    name: "Muhammad Ali",
+    role: "Masters Student, MIT",
+    image: "/assets/testimonial1.jpeg",
     text: "Thanks to the scholarship seminar, I secured a full ride to study AI at MIT. The networking opportunities were incredible!",
     rating: 5,
     scholarship: "MIT Full Scholarship - $180,000"
   },
   {
-    name: "Priya Patel",
+    name: "Maryam Farooq",
     role: "PhD Candidate, Oxford",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b332529d?w=100&h=100&fit=crop&crop=face",
+    image: "/assets/testimonial2.jpg",
     text: "The European study abroad seminar changed my life. Now I&apos;m pursuing my PhD at Oxford with full funding.",
     rating: 5,
     scholarship: "Rhodes Scholarship - £50,000/year"
   },
   {
-    name: "Umer Farooq",
+    name: "Shaista Khan",
     role: "Finance Analyst, Goldman Sachs",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+    image: "/assets/testimonial3.jpeg",
     text: "Met my current boss at the finance networking dinner. These events are pure gold for career advancement.",
     rating: 5,
     scholarship: "Career Placement Success"
@@ -132,6 +133,7 @@ const testimonials = [
 export default function ModernSeminarsWebsite() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const router = useRouter();
 
   // Featured and Upcoming Seminars are the same
   const featuredSeminars = seminars;
@@ -141,14 +143,20 @@ export default function ModernSeminarsWebsite() {
     <div className="bg-white min-h-screen">
       {/* Modern Hero Section with Gradient Animation */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-1000"></div>
-          <div className="absolute bottom-20 left-40 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-2000"></div>
+        {/* Video Background */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <video
+            src="/assets/v1.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/70" /> {/* Increased overlay opacity for better text contrast */}
         </div>
-        
-        <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
+        {/* Hero Content */}
+        <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto drop-shadow-2xl">
           <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-8 border border-white/20">
             <Star className="w-4 h-4 text-yellow-400 mr-2" />
             Trusted by 2,500+ students worldwide
@@ -170,15 +178,17 @@ export default function ModernSeminarsWebsite() {
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
             
-            <button 
-              onClick={() => setIsVideoPlaying(true)}
+            <a
+              href="https://www.youtube.com/watch?v=Y9XYXHeIhnQ"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center text-white font-medium hover:text-blue-200 transition-colors"
             >
               <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mr-3 group-hover:bg-white/30 transition-colors">
                 <Play className="w-5 h-5 ml-1" />
               </div>
               Watch Success Stories
-            </button>
+            </a>
           </div>
           
           {/* Stats Bar */}
@@ -195,16 +205,16 @@ export default function ModernSeminarsWebsite() {
       </section>
 
       {/* Departments Section */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-16 px-2 sm:px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">All Departments Welcome</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">All Departments Welcome</h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
               Specialized seminars and opportunities tailored for every field of study
             </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
             {departments.map((dept, index) => (
               <div key={index} className={`${dept.color} rounded-xl p-6 text-center border-2 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer`}>
                 <div className="text-3xl mb-3">{dept.icon}</div>
@@ -217,26 +227,43 @@ export default function ModernSeminarsWebsite() {
       </section>
 
       {/* Categories Section */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-16 px-2 sm:px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Explore Opportunities</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Explore Opportunities</h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
               From career development to international scholarships, find the perfect path for your growth
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {categories.map((category, index) => (
               <div key={index} className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer border border-gray-100">
                 <div className={`w-14 h-14 ${category.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                   <category.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{category.name}</h3>
-                <p className="text-gray-600 mb-4">{category.count} upcoming events</p>
-                <div className="flex items-center text-blue-600 font-medium group-hover:text-blue-700">
-                  Explore <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                </div>
+                <p className="text-gray-600 mb-2">{category.count} upcoming events</p>
+                {/* Add more details for each category */}
+                {category.name === 'Career Development' && (
+                  <p className="text-gray-500 text-sm mb-2">Workshops, resume clinics, and expert talks to help you launch and grow your career.</p>
+                )}
+                {category.name === 'Study Abroad' && (
+                  <p className="text-gray-500 text-sm mb-2">Guidance on international programs, scholarships, and application strategies.</p>
+                )}
+                {category.name === 'Scholarships' && (
+                  <p className="text-gray-500 text-sm mb-2">Find funding opportunities and learn how to craft winning applications.</p>
+                )}
+                {category.name === 'Networking Events' && (
+                  <p className="text-gray-500 text-sm mb-2">Meet industry leaders, alumni, and peers to expand your professional network.</p>
+                )}
+                {category.name === 'Professional Dinners' && (
+                  <p className="text-gray-500 text-sm mb-2">Exclusive dinners with professionals for mentorship and career advice.</p>
+                )}
+                {category.name === 'Research Opportunities' && (
+                  <p className="text-gray-500 text-sm mb-2">Connect with research mentors and discover hands-on project opportunities.</p>
+                )}
+                {/* Removed Explore button */}
               </div>
             ))}
           </div>
@@ -244,14 +271,14 @@ export default function ModernSeminarsWebsite() {
       </section>
 
       {/* Featured Seminars */}
-      <section className="py-20 px-4">
+      <section className="py-16 px-2 sm:px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Seminars</h2>
-            <p className="text-xl text-gray-600">Don&apos;t miss these exclusive opportunities</p>
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Featured Seminars</h2>
+            <p className="text-lg md:text-xl text-gray-600">Don&apos;t miss these exclusive opportunities</p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
             {featuredSeminars.map((seminar) => (
               <div key={seminar.id} className="group bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
                 <div className="relative overflow-hidden">
@@ -285,7 +312,8 @@ export default function ModernSeminarsWebsite() {
                       month: 'short', 
                       day: 'numeric',
                       hour: '2-digit',
-                      minute: '2-digit'
+                      minute: '2-digit',
+                      hour12: true
                     })}
                   </div>
                   
@@ -311,10 +339,11 @@ export default function ModernSeminarsWebsite() {
                   </div>
                   
                   <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center text-sm text-gray-500">
+                    {/* Removed location */}
+                    {/* <div className="flex items-center text-sm text-gray-500">
                       <MapPin className="w-4 h-4 mr-1" />
                       {seminar.location}
-                    </div>
+                    </div> */}
                     <div className="flex items-center text-sm text-gray-500">
                       <Users className="w-4 h-4 mr-1" />
                       {seminar.attendees} attending
@@ -329,7 +358,10 @@ export default function ModernSeminarsWebsite() {
                     ))}
                   </div>
                   
-                  <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+                  <button
+                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+                    onClick={() => router.push('/register')}
+                  >
                     Register Now
                   </button>
                 </div>
@@ -340,14 +372,14 @@ export default function ModernSeminarsWebsite() {
       </section>
 
       {/* Success Stories */}
-      <section className="py-20 px-4 bg-gradient-to-r from-blue-50 to-purple-50">
+      <section className="py-16 px-2 sm:px-4 bg-gradient-to-r from-blue-50 to-purple-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Success Stories</h2>
-            <p className="text-xl text-gray-600">Real students, real achievements, real impact</p>
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Success Stories</h2>
+            <p className="text-lg md:text-xl text-gray-600">Real students, real achievements, real impact</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
                 <div className="flex items-center mb-6">
@@ -385,7 +417,7 @@ export default function ModernSeminarsWebsite() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-indigo-900 to-purple-900 text-white">
+      <section className="py-16 px-2 sm:px-4 bg-gradient-to-r from-indigo-900 to-purple-900 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to Transform Your Future?
@@ -395,11 +427,17 @@ export default function ModernSeminarsWebsite() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="bg-white text-gray-900 font-bold px-8 py-4 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 flex items-center justify-center">
+            <button
+              className="bg-white text-gray-900 font-bold px-8 py-4 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 flex items-center justify-center"
+              onClick={() => router.push('/register')}
+            >
               Start Your Journey
               <ArrowRight className="ml-2 w-5 h-5" />
             </button>
-            <button className="border-2 border-white text-white font-bold px-8 py-4 rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300">
+            <button
+              className="border-2 border-white text-white font-bold px-8 py-4 rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300"
+              onClick={() => router.push('/seminars')}
+            >
               View All Events
             </button>
           </div>

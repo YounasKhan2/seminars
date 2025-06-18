@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { GraduationCap, Menu, X, Calendar, Users, Award, BookOpen, ChevronDown } from "lucide-react";
+import React from "react";
 
-export default function Navbar() {
+const Navbar = React.memo(function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [showNavbar, setShowNavbar] = useState(true);
@@ -31,28 +32,14 @@ export default function Navbar() {
     { 
       name: 'Seminars', 
       href: '/seminars', 
-      icon: Calendar,
-      dropdown: [
-        { name: 'All Seminars', href: '/seminars' },
-        { name: 'Career Development', href: '/seminars/career' },
-        { name: 'Study Abroad', href: '/seminars/study-abroad' },
-        { name: 'Research Opportunities', href: '/seminars/research' },
-        { name: 'Networking Events', href: '/seminars/networking' }
-      ]
+      icon: Calendar
     },
     { 
       name: 'Opportunities', 
       href: '/opportunities', 
-      icon: Award,
-      dropdown: [
-        { name: 'Scholarships', href: '/opportunities/scholarships' },
-        { name: 'Internships', href: '/opportunities/internships' },
-        { name: 'Mentorship', href: '/opportunities/mentorship' },
-        { name: 'Study Abroad Programs', href: '/opportunities/study-abroad' }
-      ]
+      icon: Award
     },
-    { name: 'About', href: '/about', icon: Users },
-    { name: 'Resources', href: '/resources', icon: BookOpen }
+    { name: 'About', href: '/about', icon: Users }
   ];
 
   return (
@@ -60,7 +47,7 @@ export default function Navbar() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200/50 transition-transform duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
           <div className="flex justify-between items-center h-16 lg:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3 group">
@@ -69,7 +56,7 @@ export default function Navbar() {
               </div>
               <div className="hidden sm:block">
                 <span className="text-xl font-bold text-gray-900">
-                  AcademicHub
+                  EduSeminarsPK
                 </span>
                 <div className="text-xs text-gray-600">
                   Empowering Students
@@ -197,9 +184,10 @@ export default function Navbar() {
           </div>
         )}
       </nav>
-
       {/* Spacer to prevent content from hiding behind fixed navbar */}
       <div className="h-16 lg:h-20"></div>
     </>
   );
-}
+});
+
+export default Navbar;

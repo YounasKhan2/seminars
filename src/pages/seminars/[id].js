@@ -12,9 +12,8 @@ export default function SeminarDetail() {
   return (
     <section className="py-12 max-w-2xl mx-auto">
       <h1 className="text-3xl font-bold mb-4 text-blue-900">{seminar.title}</h1>
-      <div className="mb-2 text-gray-600">{new Date(seminar.date).toLocaleString()}</div>
+      <div className="mb-2 text-gray-600">25 Jul 2025, 02:00 PM</div>
       <div className="mb-2 text-gray-700">Speaker: {seminar.speaker}</div>
-      <div className="mb-2 text-gray-700">Location: {seminar.location}</div>
       <div className="flex flex-wrap gap-2 mb-4">
         {seminar.tags.map((tag) => (
           <span key={tag} className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">{tag}</span>
