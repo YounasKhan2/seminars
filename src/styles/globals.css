@@ -29,26 +29,89 @@ html, body {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #101014;
+    --foreground: #f3f3f3;
   }
 
-  /* Improve mobile visibility in dark mode */
   html, body {
-    background: #0a0a0a;
-    color: #ededed;
+    background: #101014;
+    color: #f3f3f3;
   }
 
   input, textarea, select {
-    background: #171717;
-    color: #ededed;
-    border: 1px solid #333;
+    background: #181824;
+    color: #f3f3f3;
+    border: 1px solid #444;
+    /* Improved placeholder visibility */
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: #b0b0b0;
+    opacity: 1;
   }
 
   button {
-    background: #222;
-    color: #ededed;
-    border: 1px solid #333;
+    background: #232336;
+    color: #f3f3f3;
+    border: 1px solid #444;
+  }
+
+  /* Links */
+  a {
+    color: #7abaff;
+  }
+  a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  /* Cards, containers, and sections */
+  .bg-white,
+  .bg-gray-50,
+  .bg-blue-50,
+  .bg-purple-50,
+  .bg-amber-50,
+  .bg-red-50,
+  .bg-green-50,
+  .bg-indigo-50,
+  .bg-emerald-50,
+  .bg-pink-50 {
+    background-color: #181824 !important;
+  }
+  .text-gray-900,
+  .text-gray-800,
+  .text-blue-800,
+  .text-purple-800,
+  .text-amber-800,
+  .text-red-800,
+  .text-green-800,
+  .text-indigo-800,
+  .text-emerald-800,
+  .text-pink-800 {
+    color: #f3f3f3 !important;
+  }
+  .text-gray-600,
+  .text-gray-700 {
+    color: #b0b0b0 !important;
+  }
+  .border-gray-100,
+  .border-gray-200,
+  .border-blue-200,
+  .border-purple-200,
+  .border-amber-200,
+  .border-red-200,
+  .border-green-200,
+  .border-indigo-200,
+  .border-emerald-200,
+  .border-pink-200 {
+    border-color: #333 !important;
+  }
+
+  /* Shadows for cards in dark mode */
+  .shadow-lg,
+  .shadow-xl,
+  .shadow-2xl {
+    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.7) !important;
   }
 }
 
