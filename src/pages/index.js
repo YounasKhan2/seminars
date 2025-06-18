@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar, MapPin, Users, Award, Globe, BookOpen, Utensils, GraduationCap, ChevronRight, Star, Play, ArrowRight, Clock, CheckCircle } from 'lucide-react';
 import Footer from '../components/Footer';
+import Image from 'next/image';
 
 // Mock data for seminars
 const seminars = [
@@ -104,7 +105,7 @@ const departments = [
 const testimonials = [
   {
     name: "Alex Thompson",
-    role: "Master's Student, MIT",
+    role: "Master&apos;s Student, MIT",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
     text: "Thanks to the scholarship seminar, I secured a full ride to study AI at MIT. The networking opportunities were incredible!",
     rating: 5,
@@ -114,7 +115,7 @@ const testimonials = [
     name: "Priya Patel",
     role: "PhD Candidate, Oxford",
     image: "https://images.unsplash.com/photo-1494790108755-2616b332529d?w=100&h=100&fit=crop&crop=face",
-    text: "The European study abroad seminar changed my life. Now I'm pursuing my PhD at Oxford with full funding.",
+    text: "The European study abroad seminar changed my life. Now I&apos;m pursuing my PhD at Oxford with full funding.",
     rating: 5,
     scholarship: "Rhodes Scholarship - £50,000/year"
   },
@@ -247,16 +248,18 @@ export default function ModernSeminarsWebsite() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Seminars</h2>
-            <p className="text-xl text-gray-600">Don't miss these exclusive opportunities</p>
+            <p className="text-xl text-gray-600">Don&apos;t miss these exclusive opportunities</p>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
             {featuredSeminars.map((seminar) => (
               <div key={seminar.id} className="group bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
                 <div className="relative overflow-hidden">
-                  <img 
+                  <Image 
                     src={seminar.image} 
                     alt={seminar.title}
+                    width={400}
+                    height={192}
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute top-4 left-4">
@@ -348,9 +351,11 @@ export default function ModernSeminarsWebsite() {
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
                 <div className="flex items-center mb-6">
-                  <img 
+                  <Image 
                     src={testimonial.image} 
                     alt={testimonial.name}
+                    width={64}
+                    height={64}
                     className="w-16 h-16 rounded-full object-cover mr-4"
                   />
                   <div>

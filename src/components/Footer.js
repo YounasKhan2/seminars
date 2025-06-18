@@ -77,10 +77,10 @@ export default function Footer() {
               © 2025 AcademicHub. All rights reserved. Empowering students since 2020.
             </div>
             <div className="flex items-center space-x-6">
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Accessibility</a>
+              <Link href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</Link>
+              <Link href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</Link>
+              <Link href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</Link>
+              <Link href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Accessibility</Link>
             </div>
           </div>
         </div>
