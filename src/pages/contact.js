@@ -66,12 +66,7 @@ const Contact = () => {
           {sending ? "Sending..." : "Send Message"}
         </button>
       </form>
-      <div className="mt-8 text-center">
-        <span>Follow us: </span>
-        <a href="#" className="text-blue-900 font-semibold mx-2">Facebook</a>
-        <a href="#" className="text-blue-900 font-semibold mx-2">Twitter</a>
-        <a href="#" className="text-blue-900 font-semibold mx-2">Instagram</a>
-      </div>
+      
     </section>
   );
 };
