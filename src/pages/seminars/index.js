@@ -10,7 +10,7 @@ export default function Seminars() {
           <div key={seminar.id} className="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition">
             <h2 className="text-xl font-bold mb-2">{seminar.title}</h2>
             <div className="text-gray-600 mb-1">
-              25 Jul 2025, 02:00 PM
+              25 June 2025, 02:00 PM
             </div>
             <div className="text-gray-700 mb-1">Speaker: {seminar.speaker}</div>
             <div className="flex flex-wrap gap-2 mt-2 mb-4">

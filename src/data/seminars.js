@@ -3,7 +3,7 @@ export const seminars = [
   {
     id: "1",
     title: "AI in Education: Opportunities & Challenges",
-    date: "2025-07-25T14:00:00Z", // 2:00 PM UTC
+    date: "2025-06-25T14:00:00Z", // 2:00 PM UTC (changed from July to June)
     speaker: "Dr. Jane Smith",
     tags: ["AI", "Education", "Technology"],
     abstract: "Explore how AI is transforming education, from personalized learning to ethical concerns.",
@@ -19,7 +19,7 @@ export const seminars = [
   {
     id: "2",
     title: "Sustainable Energy: The Next Frontier",
-    date: "2025-07-25T14:00:00Z", // 2:00 PM UTC
+    date: "2025-06-25T14:00:00Z", // 2:00 PM UTC (changed from July to June)
     speaker: "Prof. John Doe",
     tags: ["Sustainability", "Energy", "Environment"],
     abstract: "A deep dive into sustainable energy solutions and their impact on society.",
@@ -35,7 +35,7 @@ export const seminars = [
   {
     id: "3",
     title: "Smart Farming: Innovations in Modern Agriculture",
-    date: "2025-07-25T14:00:00Z", // 2:00 PM UTC
+    date: "2025-06-25T14:00:00Z", // 2:00 PM UTC (changed from July to June)
     speaker: "Dr. Priya Patel",
     tags: ["Agriculture", "Technology", "Sustainability"],
     abstract: "Discover how precision agriculture, IoT, and data analytics are revolutionizing farming for the next generation.",
@@ -51,7 +51,7 @@ export const seminars = [
   {
     id: "4",
     title: "Study Abroad: European Universities Counseling",
-    date: "2025-07-25T14:00:00Z", // 2:00 PM UTC
+    date: "2025-06-25T14:00:00Z", // 2:00 PM UTC (changed from July to June)
     speaker: "Prof. Maria Rodriguez",
     tags: ["Europe", "Scholarships", "Study Abroad"],
     abstract: "Get expert guidance on applying to European universities, including Erasmus+ funding opportunities and application strategies.",

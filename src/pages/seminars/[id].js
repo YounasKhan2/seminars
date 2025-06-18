@@ -12,7 +12,7 @@ export default function SeminarDetail() {
   return (
     <section className="py-12 max-w-2xl mx-auto">
       <h1 className="text-3xl font-bold mb-4 text-blue-900">{seminar.title}</h1>
-      <div className="mb-2 text-gray-600">25 Jul 2025, 02:00 PM</div>
+      <div className="mb-2 text-gray-600">25 June 2025, 02:00 PM</div>
       <div className="mb-2 text-gray-700">Speaker: {seminar.speaker}</div>
       <div className="flex flex-wrap gap-2 mb-4">
         {seminar.tags.map((tag) => (

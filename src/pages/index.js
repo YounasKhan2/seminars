@@ -9,7 +9,7 @@ const seminars = [
   {
     id: 1,
     title: "AI & Machine Learning Career Pathways",
-    date: "2025-07-25T14:00:00", // 2:00 PM
+    date: "2025-06-25T14:00:00", // 2:00 PM
     speaker: "Dr. Sarah Chen",
     company: "Google DeepMind",
     location: "Quetta, Pakistan",
@@ -26,7 +26,7 @@ const seminars = [
   {
     id: 2,
     title: "Study Abroad: European Universities Counseling",
-    date: "2025-07-25T14:00:00", // 2:00 PM
+    date: "2025-06-25T14:00:00", // 2:00 PM (changed from July to June)
     speaker: "Prof. Maria Rodriguez",
     company: "EU Education Council",
     location: "Quetta, Pakistan",
@@ -43,7 +43,7 @@ const seminars = [
   {
     id: 3,
     title: "Medical Research Breakthrough Symposium",
-    date: "2025-07-25T14:00:00", // 2:00 PM
+    date: "2025-06-25T14:00:00", // 2:00 PM (changed from July to June)
     speaker: "Dr. James Wilson",
     company: "Johns Hopkins Medical Center",
     location: "Quetta, Pakistan",
@@ -60,7 +60,7 @@ const seminars = [
   {
     id: 4,
     title: "Sustainable Agriculture & Food Security",
-    date: "2025-07-25T14:00:00", // 2:00 PM
+    date: "2025-06-25T14:00:00", // 2:00 PM
     speaker: "Dr. Emily Green",
     company: "FAO United Nations",
     location: "Quetta, Pakistan",
