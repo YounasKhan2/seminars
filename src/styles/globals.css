@@ -32,6 +32,24 @@ html, body {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+
+  /* Improve mobile visibility in dark mode */
+  html, body {
+    background: #0a0a0a;
+    color: #ededed;
+  }
+
+  input, textarea, select {
+    background: #171717;
+    color: #ededed;
+    border: 1px solid #333;
+  }
+
+  button {
+    background: #222;
+    color: #ededed;
+    border: 1px solid #333;
+  }
 }
 
 body {
