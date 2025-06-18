@@ -375,7 +375,7 @@ export default function ModernSeminarsWebsite() {
       <section className="py-16 px-2 sm:px-4 bg-gradient-to-r from-blue-50 to-purple-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Success Stories</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray mb-4">Success Stories</h2>
             <p className="text-lg md:text-xl text-gray-600">Real students, real achievements, real impact</p>
           </div>
           
