@@ -1,4 +1,5 @@
 import { MapPin, CheckCircle, Award } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -9,10 +10,10 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="/seminars" className="hover:underline">Seminars</a></li>
-              <li><a href="/about" className="hover:underline">About</a></li>
-              <li><a href="/contact" className="hover:underline">Contact</a></li>
-              <li><a href="/register" className="hover:underline">Register</a></li>
+              <li><Link href="/seminars" className="hover:underline">Seminars</Link></li>
+              <li><Link href="/about" className="hover:underline">About</Link></li>
+              <li><Link href="/contact" className="hover:underline">Contact</Link></li>
+              <li><Link href="/register" className="hover:underline">Register</Link></li>
             </ul>
           </div>
           {/* Social & Contact */}

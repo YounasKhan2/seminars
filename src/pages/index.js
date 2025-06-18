@@ -119,7 +119,7 @@ const testimonials = [
     scholarship: "Rhodes Scholarship - £50,000/year"
   },
   {
-    name: "Marcus Johnson",
+    name: "Umer Farooq",
     role: "Finance Analyst, Goldman Sachs",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
     text: "Met my current boss at the finance networking dinner. These events are pure gold for career advancement.",
