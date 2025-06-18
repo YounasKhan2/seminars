@@ -370,7 +370,7 @@ export default function ModernSeminarsWebsite() {
                   ))}
                 </div>
                 
-                <p className="text-gray-700 mb-4 italic">"{testimonial.text}"</p>
+                <p className="text-gray-700 mb-4 italic">&quot;{testimonial.text}&quot;</p>
                 
                 <div className="bg-green-50 border border-green-200 rounded-lg p-3">
                   <div className="flex items-center text-green-700 text-sm font-medium">
