@@ -143,7 +143,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Students Choose EduSeminarsPK</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-16">
-            We've built our reputation on delivering real results and creating lasting impact in students' lives.
+            We&apos;ve built our reputation on delivering real results and creating lasting impact in students&apos; lives.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {trustPoints.map((point, index) => (
