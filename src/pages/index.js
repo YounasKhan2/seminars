@@ -73,6 +73,113 @@ const seminars = [
     rating: 4.8,
     image: "/assets/agric.jpeg",
     featured: true
+  },
+  {
+    id: 5,
+    title: "Legal Innovations: The Future of Law in Pakistan",
+    date: "2025-06-25T14:00:00",
+    speaker: "Barrister Ayesha Khan",
+    company: "Pakistan Bar Council",
+    location: "Quetta, Pakistan",
+    category: "Law",
+    type: "Legal Seminar",
+    department: "Law",
+    scholarshipInfo: "Special awards for top law students",
+    tags: ["Law", "LegalTech", "Justice"],
+    attendees: 54,
+    rating: 4.7,
+    image: "/assets/law.jpg",
+    featured: true
+  },
+  {
+    id: 6,
+    title: "Quantum Computing: The Next Revolution",
+    date: "2025-12-10T14:00:00",
+    speaker: "Dr. Alan Turing",
+    company: "IBM Research",
+    location: "Quetta, Pakistan",
+    category: "Technology",
+    type: "Future Tech Seminar",
+    department: "Software Engineering",
+    scholarshipInfo: "Future research fellowships to be announced",
+    tags: ["Quantum", "Computing", "Innovation"],
+    attendees: 0,
+    rating: 0,
+    image: "/assets/quantum.jpg",
+    featured: true,
+    comingSoon: true
+  },
+  {
+    id: 7,
+    title: "Global Health Policy & Leadership",
+    date: "2026-01-15T14:00:00",
+    speaker: "Dr. Lisa Chang",
+    company: "World Health Organization",
+    location: "Quetta, Pakistan",
+    category: "Health",
+    type: "Leadership Seminar",
+    department: "Medical Sciences",
+    scholarshipInfo: "Leadership scholarships opening soon",
+    tags: ["Health", "Policy", "Leadership"],
+    attendees: 0,
+    rating: 0,
+    image: "/assets/globalhealth.jpg",
+    featured: true,
+    comingSoon: true
+  },
+  {
+    id: 8,
+    title: "FinTech & Digital Banking Summit",
+    date: "2026-03-20T14:00:00",
+    speaker: "Ms. Sofia Rahman",
+    company: "Habib Bank Limited",
+    location: "Quetta, Pakistan",
+    category: "Finance",
+    type: "Industry Panel",
+    department: "Business & Economics",
+    scholarshipInfo: "FinTech innovation grants to be announced",
+    tags: ["FinTech", "Banking", "Innovation"],
+    attendees: 0,
+    rating: 0,
+    image: "/assets/fintech.jpg",
+    featured: true,
+    comingSoon: true
+  },
+  {
+    id: 9,
+    title: "Climate Change & Policy Forum",
+    date: "2026-04-10T14:00:00",
+    speaker: "Dr. Hassan Tariq",
+    company: "UNDP Pakistan",
+    location: "Quetta, Pakistan",
+    category: "Environment",
+    type: "Policy Forum",
+    department: "Environmental Sciences",
+    scholarshipInfo: "Climate action fellowships opening soon",
+    tags: ["Climate", "Policy", "Sustainability"],
+    attendees: 0,
+    rating: 0,
+    image: "/assets/climate.jpg",
+    featured: true,
+    comingSoon: true
+  },
+  {
+    id: 10,
+    title: "Global Art & Culture Exchange",
+    date: "2026-05-05T14:00:00",
+    speaker: "Prof. Anna Müller",
+    company: "Berlin University of the Arts",
+    location: "Quetta, Pakistan",
+    category: "Arts & Humanities",
+    type: "Cultural Seminar",
+    department: "Arts & Humanities",
+    scholarshipInfo: "International art residencies to be announced",
+    tags: ["Art", "Culture", "Exchange"],
+    attendees: 0,
+    rating: 0,
+    image: "/assets/art.jpg",
+    featured: true,
+    comingSoon: true
   }
 ];
 
@@ -276,6 +383,9 @@ export default function ModernSeminarsWebsite() {
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Featured Seminars</h2>
             <p className="text-lg md:text-xl text-gray-600">Don&apos;t miss these exclusive opportunities</p>
+            <div className="mt-4 text-blue-700 text-base font-medium">
+              <span>Note: Some seminars are marked as <strong>Coming Soon</strong> and registration will open closer to the event date. Stay tuned for more details!</span>
+            </div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
@@ -294,10 +404,12 @@ export default function ModernSeminarsWebsite() {
                       {seminar.type}
                     </span>
                   </div>
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1 flex items-center">
-                    <Star className="w-3 h-3 text-yellow-500 mr-1" />
-                    <span className="text-xs font-medium">{seminar.rating}</span>
-                  </div>
+                  {seminar.rating > 0 && (
+                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1 flex items-center">
+                      <Star className="w-3 h-3 text-yellow-500 mr-1" />
+                      <span className="text-xs font-medium">{seminar.rating}</span>
+                    </div>
+                  )}
                   <div className="absolute bottom-4 left-4">
                     <span className="bg-white/20 backdrop-blur-sm text-white text-xs font-medium px-2 py-1 rounded-full">
                       {seminar.department}
@@ -339,14 +451,9 @@ export default function ModernSeminarsWebsite() {
                   </div>
                   
                   <div className="flex items-center justify-between mb-4">
-                    {/* Removed location */}
-                    {/* <div className="flex items-center text-sm text-gray-500">
-                      <MapPin className="w-4 h-4 mr-1" />
-                      {seminar.location}
-                    </div> */}
                     <div className="flex items-center text-sm text-gray-500">
                       <Users className="w-4 h-4 mr-1" />
-                      {seminar.attendees} attending
+                      {seminar.attendees > 0 ? `${seminar.attendees} attending` : 'New Event'}
                     </div>
                   </div>
                   
@@ -358,12 +465,21 @@ export default function ModernSeminarsWebsite() {
                     ))}
                   </div>
                   
-                  <button
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
-                    onClick={() => router.push('/register')}
-                  >
-                    Register Now
-                  </button>
+                  {seminar.comingSoon ? (
+                    <button
+                      className="w-full bg-gray-300 text-gray-600 font-semibold py-3 rounded-xl cursor-not-allowed opacity-70"
+                      disabled
+                    >
+                      Coming Soon
+                    </button>
+                  ) : (
+                    <button
+                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+                      onClick={() => router.push('/register')}
+                    >
+                      Register Now
+                    </button>
+                  )}
                 </div>
               </div>
             ))}

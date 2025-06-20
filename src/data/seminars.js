@@ -64,5 +64,21 @@ export const seminars = [
       { time: "16:00", activity: "Networking" },
       { time: "16:30", activity: "Dinner" } // End at 4:30 PM
     ]
+  },
+  {
+    id: "5",
+    title: "Legal Innovations: The Future of Law in Pakistan",
+    date: "2025-06-25T14:00:00Z",
+    speaker: "Barrister Ayesha Khan",
+    tags: ["Law", "LegalTech", "Justice"],
+    abstract: "Explore the intersection of technology and law, legal reforms, and career opportunities for law students in Pakistan.",
+    bio: "Barrister Ayesha Khan is a renowned legal expert and advocate for legal technology adoption in Pakistan. She has worked with international law firms, is a frequent speaker at legal innovation conferences, and mentors young law professionals.",
+    schedule: [
+      { time: "14:00", activity: "Welcome & Introduction" },
+      { time: "14:15", activity: "Keynote: Barrister Ayesha Khan" },
+      { time: "15:00", activity: "Panel Discussion: LegalTech in Pakistan" },
+      { time: "15:45", activity: "Q&A" },
+      { time: "16:30", activity: "Networking & Dinner" }
+    ]
   }
 ];
