@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { Calendar, MapPin, Users, Award, Globe, BookOpen, Utensils, GraduationCap, ChevronRight, Star, Play, ArrowRight, Clock, CheckCircle } from 'lucide-react';
 import Footer from '../components/Footer';
 import Image from 'next/image';
+import dynamic from "next/dynamic";
 
 // Mock data for seminars
 const seminars = [
@@ -237,6 +238,8 @@ const testimonials = [
   }
 ];
 
+const AdSenseBanner = dynamic(() => import("../components/AdSense"), { ssr: false });
+
 export default function ModernSeminarsWebsite() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
@@ -378,6 +381,10 @@ export default function ModernSeminarsWebsite() {
       </section>
 
       {/* Featured Seminars */}
+      {/* Google AdSense Responsive Ad Unit (client-only) */}
+      <div className="flex justify-center mb-8">
+        <AdSenseBanner />
+      </div>
       <section className="py-16 px-2 sm:px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 md:mb-16">

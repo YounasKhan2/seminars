@@ -25,6 +25,10 @@ const Footer = () => {
               <li><Link href="/about" className="hover:underline">About</Link></li>
               <li><Link href="/contact" className="hover:underline">Contact</Link></li>
               <li><Link href="/register" className="hover:underline">Register</Link></li>
+              <li><Link href="/privacy" className="hover:underline">Privacy Policy</Link></li>
+              <li><Link href="/terms" className="hover:underline">Terms of Service</Link></li>
+              <li><Link href="/cookies" className="hover:underline">Cookie Policy</Link></li>
+              <li><Link href="/accessibility" className="hover:underline">Accessibility</Link></li>
             </ul>
           </div>
           
@@ -80,10 +84,10 @@ const Footer = () => {
               © 2025 EduSeminarsPK. All rights reserved. Empowering students since 2017.
             </div>
             <div className="flex flex-wrap items-center justify-center space-x-4 md:space-x-6">
-              <Link href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</Link>
-              <Link href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</Link>
-              <Link href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</Link>
-              <Link href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Accessibility</Link>
+              <Link href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</Link>
+              <Link href="/terms" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</Link>
+              <Link href="/cookies" className="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</Link>
+              <Link href="/accessibility" className="text-gray-400 hover:text-white text-sm transition-colors">Accessibility</Link>
             </div>
           </div>
         </div>
