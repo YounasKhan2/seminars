@@ -104,9 +104,7 @@ export default function SeminarDetail() {
   return (
     <section className="py-12 max-w-3xl mx-auto">
       <h1 className="text-3xl font-bold mb-4 text-blue-900">{seminar.title}</h1>
-      <div className="mb-2 text-gray-700">{new Date(seminar.date).toLocaleString()}</div>
       <div className="mb-2 text-gray-700">Speaker: {seminar.speaker}</div>
-      <div className="mb-2 text-gray-700">Department: {seminar.department}</div>
       <div className="mb-4 text-gray-700">{seminar.abstract}</div>
       <div className="mb-4 text-gray-700"><strong>Speaker Bio:</strong> {seminar.bio}</div>
       <div className="mb-6">

@@ -10,7 +10,7 @@ const seminars = [
   {
     id: 1,
     title: "AI & Machine Learning Career Pathways",
-    date: "2025-06-25T14:00:00", // 2:00 PM
+    date: "2025-06-30T14:00:00", // 2:00 PM
     speaker: "Dr. Sarah Chen",
     company: "Google DeepMind",
     location: "Quetta, Pakistan",
@@ -27,7 +27,7 @@ const seminars = [
   {
     id: 2,
     title: "Study Abroad: European Universities Counseling",
-    date: "2025-06-25T14:00:00", // 2:00 PM (changed from July to June)
+    date: "2025-06-30T14:00:00", // 2:00 PM (changed from July to June)
     speaker: "Prof. Maria Rodriguez",
     company: "EU Education Council",
     location: "Quetta, Pakistan",
@@ -44,7 +44,7 @@ const seminars = [
   {
     id: 3,
     title: "Medical Research Breakthrough Symposium",
-    date: "2025-06-25T14:00:00", // 2:00 PM (changed from July to June)
+    date: "2025-06-30T14:00:00", // 2:00 PM (changed from July to June)
     speaker: "Dr. James Wilson",
     company: "Johns Hopkins Medical Center",
     location: "Quetta, Pakistan",
@@ -61,7 +61,7 @@ const seminars = [
   {
     id: 4,
     title: "Sustainable Agriculture & Food Security",
-    date: "2025-06-25T14:00:00", // 2:00 PM
+    date: "2025-06-30T14:00:00", // 2:00 PM
     speaker: "Dr. Emily Green",
     company: "FAO United Nations",
     location: "Quetta, Pakistan",
@@ -78,7 +78,7 @@ const seminars = [
   {
     id: 5,
     title: "Legal Innovations: The Future of Law in Pakistan",
-    date: "2025-06-25T14:00:00",
+    date: "2025-06-30T14:00:00",
     speaker: "Barrister Ayesha Khan",
     company: "Pakistan Bar Council",
     location: "Quetta, Pakistan",
@@ -95,7 +95,7 @@ const seminars = [
   {
     id: 6,
     title: "Quantum Computing: The Next Revolution",
-    date: "2025-12-10T14:00:00",
+    date: "2025-07-20T14:00:00",
     speaker: "Dr. Alan Turing",
     company: "IBM Research",
     location: "Quetta, Pakistan",
@@ -113,7 +113,7 @@ const seminars = [
   {
     id: 7,
     title: "Global Health Policy & Leadership",
-    date: "2026-01-15T14:00:00",
+    date: "2026-07-20T14:00:00",
     speaker: "Dr. Lisa Chang",
     company: "World Health Organization",
     location: "Quetta, Pakistan",
@@ -131,7 +131,7 @@ const seminars = [
   {
     id: 8,
     title: "FinTech & Digital Banking Summit",
-    date: "2026-03-20T14:00:00",
+    date: "2026-07-20T14:00:00",
     speaker: "Ms. Sofia Rahman",
     company: "Habib Bank Limited",
     location: "Quetta, Pakistan",
@@ -149,7 +149,7 @@ const seminars = [
   {
     id: 9,
     title: "Climate Change & Policy Forum",
-    date: "2026-04-10T14:00:00",
+    date: "2026-07-20T14:00:00",
     speaker: "Dr. Hassan Tariq",
     company: "UNDP Pakistan",
     location: "Quetta, Pakistan",
@@ -167,7 +167,7 @@ const seminars = [
   {
     id: 10,
     title: "Global Art & Culture Exchange",
-    date: "2026-05-05T14:00:00",
+    date: "2026-07-20T14:00:00",
     speaker: "Prof. Anna Müller",
     company: "Berlin University of the Arts",
     location: "Quetta, Pakistan",
@@ -567,7 +567,7 @@ export default function ModernSeminarsWebsite() {
           
           <div className="mt-12 flex items-center justify-center text-sm text-gray-300">
             <Clock className="w-4 h-4 mr-2" />
-            Next registration deadline: July 24, 2025
+            Next registration deadline: June 29, 2025
           </div>
         </div>
       </section>
